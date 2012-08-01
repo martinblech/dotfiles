@@ -6,11 +6,10 @@
 [hub]
         protocol = https
 [user]
-        name = Zach Holman
-        email = zach@zachholman.com
-        helper = /opt/boxen/bin/boxen-git-credential
-        # FIXME: You'll want the `helper` line below; delete the one above.
-        # helper = osxkeychain
+        name = Martin Blech
+        email = martinblech@gmail.com
+[credential]
+        helper = osxkeychain
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
@@ -23,9 +22,7 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = /opt/boxen/config/git/gitignore
-        # FIXME: You'll want the `excludesfile` line below; delete the one above.
-        # excludesfile = ~/.gitignore
+        excludesfile = ~/.gitignore
         editor = vim
 [apply]
         whitespace = nowarn
@@ -35,7 +32,3 @@
         prompt = false
 [help]
         autocorrect = 1
-
-# FIXME: You can nuke all of this on your machine.
-[credential]
-        helper = /opt/boxen/bin/boxen-git-credential
