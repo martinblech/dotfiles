@@ -4,8 +4,8 @@
 [hub]
         protocol = https
 [user]
-        name = AUTHORNAME
-        email = AUTHOREMAIL
+        name = Martin Blech
+        email = martinblech@gmail.com
 [credential]
         helper = osxkeychain
 [alias]
