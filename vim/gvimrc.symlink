@@ -1,4 +1,3 @@
-colorscheme desert
 set anti
 set lines=999 columns=84
 set guioptions=egmrt
@@ -30,3 +29,6 @@ nmap <d-6> 6gt
 nmap <d-7> 7gt
 nmap <d-8> 8gt
 nmap <d-9> 9gt
+
+" highlight current line
+set cursorline
