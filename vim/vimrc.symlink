@@ -74,7 +74,7 @@ set mat=5                  " duration to show matching brace (1/10 sec)
 set incsearch              " do incremental searching
 set laststatus=2           " always show the status line
 set ignorecase             " ignore case when searching
-" set nohlsearch             " don't highlight searches
+set smartcase              " but be case sensitive when there's uppercase chars
 set hlsearch               " highlight searches
 set visualbell             " shut the fuck up
 
@@ -133,3 +133,14 @@ let Tlist_Show_One_File = 1
 " (ctags) go to definition in a new tab
 "map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <C-\> :tab split<CR>:exec("tjump ".expand("<cword>"))<CR>
+
+" use currently open buffer
+:se switchbuf=usetab
+
+" avoid hidden buffers
+:se nohidden
+
+" command-t open in new tab by default
+let g:CommandTAcceptSelectionMap='<S-CR>'
+let g:CommandTAcceptSelectionSplitMap='<C-s>'
+let g:CommandTAcceptSelectionTabMap='<CR>'
