@@ -1,4 +1,6 @@
-# holman does dotfiles
+# martinblech does dotfiles
+
+My fork of holman's excelent dotfiles.
 
 ## dotfiles
 
@@ -19,7 +21,7 @@ subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 Run this:
 
 ```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
+git clone https://github.com/martinblech/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
@@ -34,6 +36,9 @@ which sets up a few paths that'll be different on your particular machine.
 defaults, and so on. Tweak this script, and occasionally run `dot` from
 time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
+
+You'll also want to change `git/gitconfig.symlink`, which will set you up as
+committing as Martin Blech. You probably don't want that.
 
 ## topical
 
