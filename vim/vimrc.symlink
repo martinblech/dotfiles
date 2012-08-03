@@ -208,4 +208,7 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons
-nmap <Leader>r :RainbowParenthesesToggle<CR>
+nnoremap <Leader>r :RainbowParenthesesToggle<CR>
+
+" ack mapping
+nnoremap <Leader>a :Ack
