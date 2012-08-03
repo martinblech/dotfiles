@@ -144,3 +144,11 @@ map <C-\> :tab split<CR>:exec("tjump ".expand("<cword>"))<CR>
 let g:CommandTAcceptSelectionMap='<S-CR>'
 let g:CommandTAcceptSelectionSplitMap='<C-s>'
 let g:CommandTAcceptSelectionTabMap='<CR>'
+
+" rainbow parenthesis
+" au VimEnter * RainbowParenthesesToggle " default enabled
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
+nmap <Leader>r :RainbowParenthesesToggle<CR>
