@@ -10,7 +10,7 @@ set noswapfile
 set autoindent             " automatic indent new lines
 set smartindent            " be smart about it
 inoremap # X<BS>#
-set nowrap                 " do not wrap lines
+" set nowrap                 " do not wrap lines
 set softtabstop=2          " yep, two
 set shiftwidth=2           " ..
 set tabstop=4
@@ -55,11 +55,11 @@ set ruler                  " show the cursor position all the time
 set noshowcmd              " don't display incomplete commands
 set nolazyredraw           " turn off lazy redraw
 set number                 " line numbers
-" set wildmenu               " turn on wild menu
-" set wildmode=list:longest,full
+set wildmenu               " turn on wild menu
+set wildmode=list:longest,full
 set ch=2                   " command line height
 set backspace=2            " allow backspacing over everything in insert mode
-set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
+" set whichwrap+=<,>,h,l,[,] " backspace and cursor keys wrap to
 set shortmess=filtIoOA     " shorten messages
 set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
