@@ -40,6 +40,9 @@ this script in `bin/`.
 You'll also want to change `git/gitconfig.symlink`, which will set you up as
 committing as Martin Blech. You probably don't want that.
 
+You'll also want to change `git/gitconfig.symlink`, which will set you up as
+committing as Martin Blech. You probably don't want that.
+
 ## topical
 
 Everything's built around topic areas. If you're adding a new area to your
