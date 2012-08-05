@@ -4,3 +4,7 @@ setlocal shiftwidth=4
 setlocal textwidth=80
 setlocal smarttab
 setlocal expandtab
+
+" code folding
+setlocal foldmethod=indent
+setlocal foldnestmax=2
