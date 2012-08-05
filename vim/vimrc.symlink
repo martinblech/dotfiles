@@ -17,7 +17,8 @@ set tabstop=4
 set expandtab              " expand tabs to spaces
 set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
-"set textwidth=80           " wrap at 80 chars by default
+set textwidth=80           " wrap at 80 chars by default
+set colorcolumn=+1         " color column 81
 set virtualedit=block      " allow virtual edit in visual block ..
 
 " ----------------------------------------------------------------------------
@@ -111,7 +112,9 @@ syntax enable
 
 " tab navigation
 map <C-l> gt
+map <D-Right> gt
 map <C-h> gT
+map <D-Left> gt
 
 " nice colors
 set background=dark
@@ -141,9 +144,9 @@ map <C-\> :tab split<CR>:exec("tjump ".expand("<cword>"))<CR>
 :se nohidden
 
 " command-t open in new tab by default
-let g:CommandTAcceptSelectionMap='<S-CR>'
-let g:CommandTAcceptSelectionSplitMap='<C-s>'
-let g:CommandTAcceptSelectionTabMap='<CR>'
+" let g:CommandTAcceptSelectionMap='<S-CR>'
+" let g:CommandTAcceptSelectionSplitMap='<C-s>'
+" let g:CommandTAcceptSelectionTabMap='<CR>'
 
 " rainbow parenthesis
 " au VimEnter * RainbowParenthesesToggle " default enabled
@@ -154,4 +157,10 @@ au Syntax * RainbowParenthesesLoadChevrons
 nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 
 " ack mapping
-nnoremap <Leader>a :Ack
+nnoremap <Leader>a :Ack 
+
+nnoremap <Leader>/ :noh<CR>
+
+" code folding
+set foldmethod=syntax
+nnoremap <Space> za
