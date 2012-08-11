@@ -31,6 +31,9 @@ let mapleader = ","
 " exit to normal mode with 'jj'
 inoremap jj <ESC>
 
+" exit to normal mode with ':w<CR>'
+inoremap :w<CR> <ESC>:w<CR>
+
 
 " reflow paragraph with Q in normal and visual mode
 nnoremap Q gqap
@@ -107,11 +110,30 @@ set completeopt=menuone,longest,preview
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" tab navigation
-map <C-l> gt
-map <D-Right> gt
-map <C-h> gT
-map <D-Left> gt
+" split and tab navigation
+
+func! GoLeft()
+  let oldw = winnr()
+  silent! exe "normal! \<c-w>h"
+  let neww = winnr()
+  if oldw == neww
+    exe "normal! \gT"
+  endif
+endfunction
+
+func! GoRight()
+  let oldw = winnr()
+  silent! exe "normal! \<c-w>l"
+  let neww = winnr()
+  if oldw == neww
+    exe "normal! \gt"
+  endif
+endfunction
+
+nnoremap <silent> <C-h> :call GoLeft()<CR>
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <silent> <C-l> :call GoRight()<CR>
 
 " nice colors
 set background=dark
