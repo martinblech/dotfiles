@@ -107,9 +107,6 @@ set completeopt=menuone,longest,preview
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" syntax highliting
-syntax enable
-
 " tab navigation
 map <C-l> gt
 map <D-Right> gt
@@ -164,3 +161,6 @@ nnoremap <Leader>/ :noh<CR>
 " code folding
 set foldmethod=syntax
 nnoremap <Space> za
+
+" syntax highliting
+syntax on
