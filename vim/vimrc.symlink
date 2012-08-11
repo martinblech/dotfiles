@@ -218,3 +218,6 @@ nnoremap <Leader>/ :noh<CR>
 " code folding
 set foldmethod=syntax
 nnoremap <Space> za
+
+" syntax highliting
+syntax on
