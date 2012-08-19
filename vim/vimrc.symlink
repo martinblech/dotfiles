@@ -32,7 +32,7 @@ let mapleader = ","
 inoremap jj <ESC>
 
 " exit to normal mode with ':w<CR>'
-inoremap :w<CR> <ESC>:w<CR>
+inoremap :w<CR> <ESC>:w<CR>i
 
 
 " reflow paragraph with Q in normal and visual mode
@@ -183,6 +183,7 @@ nnoremap <Leader>/ :noh<CR>
 " code folding
 set foldmethod=syntax
 nnoremap <Space> za
+set nofoldenable " folds disabled by default
 
 " syntax highliting
 syntax on
