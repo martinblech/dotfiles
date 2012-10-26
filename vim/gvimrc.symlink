@@ -34,4 +34,8 @@ nmap <d-9> 9gt
 set cursorline
 
 " set font
-set guifont=Inconsolata:h14
+if has("gui_macvim")
+  set guifont=Inconsolata:h14
+else
+  set guifont=Inconsolata\ 12
+endif
