@@ -32,3 +32,6 @@ nmap <d-9> 9gt
 
 " highlight current line
 set cursorline
+
+" set font
+set guifont=Inconsolata:h14
