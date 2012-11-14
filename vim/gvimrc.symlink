@@ -37,5 +37,5 @@ set cursorline
 if has("gui_macvim")
   set guifont=Inconsolata:h14
 else
-  set guifont=Inconsolata\ 12
+  set guifont=Inconsolata\ Medium\ 12
 endif
