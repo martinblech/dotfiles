@@ -6,6 +6,9 @@ set guioptions=egmrt
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CommandT<CR>
+else
+  set winaltkeys=no
+  noremap <A-t> :CommandT<CR>
 endif
 
 " Open Command+T in a new tab
