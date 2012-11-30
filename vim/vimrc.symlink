@@ -2,6 +2,7 @@
 set nocompatible
 
 set noswapfile
+set encoding=utf-8
 
 " ----------------------------------------------------------------------------
 "  Text Formatting
@@ -140,8 +141,9 @@ set background=dark
 colorscheme solarized
 
 " NERDTree
-map <F2> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
+let NERDTreeChDirMode=2
+nnoremap <leader>n :NERDTree .<CR>
 
 " TagList
 map <F3> :TlistToggle<CR>
