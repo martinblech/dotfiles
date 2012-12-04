@@ -1,7 +1,6 @@
 " disable vi compatibility
 set nocompatible
 
-set noswapfile
 set encoding=utf-8
 
 " ----------------------------------------------------------------------------
@@ -131,6 +130,7 @@ func! GoRight()
   endif
 endfunction
 
+" window-tab navigation
 nnoremap <silent> <C-h> :call GoLeft()<CR>
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -141,9 +141,9 @@ set background=dark
 colorscheme solarized
 
 " NERDTree
-let NERDTreeQuitOnOpen = 1
+" let NERDTreeQuitOnOpen = 1
 let NERDTreeChDirMode=2
-nnoremap <leader>n :NERDTree .<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " TagList
 map <F3> :TlistToggle<CR>
@@ -162,7 +162,7 @@ map <C-\> :tab split<CR>:exec("tjump ".expand("<cword>"))<CR>
 :se switchbuf=usetab
 
 " avoid hidden buffers
-:se nohidden
+" :se nohidden
 
 " command-t open in new tab by default
 " let g:CommandTAcceptSelectionMap='<S-CR>'
@@ -189,3 +189,6 @@ set nofoldenable " folds disabled by default
 
 " syntax highliting
 syntax on
+
+" open bufexplorer with <Tab>
+nmap <Tab> <Leader>be
