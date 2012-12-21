@@ -1,5 +1,5 @@
 set anti
-set lines=60 columns=120
+set lines=60 columns=117
 set guioptions=egmrt
 
 " Command + t to :CommandT
