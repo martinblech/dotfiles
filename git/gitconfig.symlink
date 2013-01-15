@@ -32,3 +32,5 @@
         prompt = false
 [help]
         autocorrect = 1
+[push]
+	default = simple
