@@ -92,7 +92,6 @@ function! StripWhitespace ()
 endfunction
 map ,s :call StripWhitespace ()<CR>
 
-
 " ---------------------------------------------------------------------------
 "  My Settings
 " ---------------------------------------------------------------------------
@@ -178,7 +177,7 @@ au Syntax * RainbowParenthesesLoadChevrons
 nnoremap <Leader>r :RainbowParenthesesToggle<CR>
 
 " ack mapping
-nnoremap <Leader>a :Ack 
+nnoremap <Leader>a :Ack
 
 nnoremap <Leader>/ :noh<CR>
 
@@ -192,3 +191,6 @@ syntax on
 
 " open bufexplorer with <Tab>
 nmap <Tab> <Leader>be
+
+" highlight trailing whitespace
+highlight ShowTrailingWhitespace ctermbg=DarkRed guibg=DarkRed
