@@ -1,6 +1,24 @@
-autoload colors && colors
-# cheers, @ehrenmurdick
-# http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
+# agnoster's Theme - https://gist.github.com/3712874
+# A Powerline-inspired theme for ZSH
+#
+# # README
+#
+# In order for this theme to render correctly, you will need a
+# [Powerline-patched font](https://gist.github.com/1595572).
+#
+# In addition, I recommend the
+# [Solarized theme](https://github.com/altercation/solarized/) and, if you're
+# using it on Mac OS X, [iTerm 2](http://www.iterm2.com/) over Terminal.app -
+# it has significantly better color fidelity.
+#
+# # Goals
+#
+# The aim of this theme is to only show you *relevant* information. Like most
+# prompts, it will only show git information when in a git working directory.
+# However, it goes a step further: everything from the current user and
+# hostname to whether the last call exited with an error to whether background
+# jobs are running in this shell will all be displayed automatically when
+# appropriate.
 
 if (( $+commands[git] ))
 then
@@ -19,13 +37,10 @@ git_dirty() {
   then
     echo ""
   else
-    if [[ "$st" =~ ^nothing ]]
-    then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
-    else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
-    fi
+    echo -n "%{$bg%}%{$fg%} "
   fi
+  CURRENT_BG=$1
+  [[ -n $3 ]] && echo -n $3
 }
 
 git_prompt_info () {
@@ -38,40 +53,41 @@ unpushed () {
   $git cherry -v @{upstream} 2>/dev/null
 }
 
-need_push () {
-  if [[ $(unpushed) == "" ]]
-  then
-    echo " "
+# Context: user@hostname (who am I and where am I)
+prompt_context() {
+  local user=`whoami`
+
+  if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)$user@%m"
+  fi
+}
+
+# Checks if working tree is dirty
+parse_git_dirty() {
+  local SUBMODULE_SYNTAX=''
+  if [[ $POST_1_7_2_GIT -gt 0 ]]; then
+        SUBMODULE_SYNTAX="--ignore-submodules=dirty"
+  fi
+  if [[ -n $(git status -s ${SUBMODULE_SYNTAX}  2> /dev/null) ]]; then
+    echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
   fi
 }
 
-rb_prompt(){
-  if (( $+commands[rbenv] ))
-  then
-	  echo "%{$fg_bold[yellow]%}$(rbenv version | awk '{print $1}')%{$reset_color%}"
-	else
-	  echo ""
-  fi
-}
-
-# This keeps the number of todos always available the right hand side of my
-# command line. I filter it to only count those tagged as "+next", so it's more
-# of a motivation to clear out the list.
-todo(){
-  if (( $+commands[todo.sh] ))
-  then
-    num=$(echo $(todo.sh ls +next | wc -l))
-    let todos=num-2
-    if [ $todos != 0 ]
-    then
-      echo "$todos"
+# Git: branch/detached head, dirty status
+prompt_git() {
+  local ref dirty
+  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+    ZSH_THEME_GIT_PROMPT_DIRTY='±'
+    dirty=$(parse_git_dirty)
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
+    if [[ -n $dirty ]]; then
+      prompt_segment yellow black
     else
-      echo ""
+      prompt_segment green black
     fi
-  else
-    echo ""
+    echo -n "${ref/refs\/heads\//⭠ }$dirty"
   fi
 }
 

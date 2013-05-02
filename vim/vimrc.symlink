@@ -196,29 +196,3 @@ nmap <Tab> <Leader>be
 highlight ShowTrailingWhitespace ctermbg=DarkRed guibg=DarkRed
 
 :se nohidden
-
-" command-t open in new tab by default
-" let g:CommandTAcceptSelectionMap='<S-CR>'
-" let g:CommandTAcceptSelectionSplitMap='<C-s>'
-" let g:CommandTAcceptSelectionTabMap='<CR>'
-
-" rainbow parenthesis
-" au VimEnter * RainbowParenthesesToggle " default enabled
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-au Syntax * RainbowParenthesesLoadChevrons
-nnoremap <Leader>r :RainbowParenthesesToggle<CR>
-
-" ack mapping
-nnoremap <Leader>a :Ack 
-
-nnoremap <Leader>/ :noh<CR>
-
-" code folding
-set foldmethod=syntax
-nnoremap <Space> za
-set nofoldenable " folds disabled by default
-
-" syntax highliting
-syntax on
