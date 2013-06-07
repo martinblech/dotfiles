@@ -1,5 +1,22 @@
 {
-	"vintage_start_in_command_mode": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"ensure_newline_at_eof_on_save": false,
 	"font_size": 12.0,
-	"theme": "Soda Dark.sublime-theme"
+	"highlight_line": true,
+	"ignored_packages":
+	[
+	],
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"rulers":
+	[
+		80,
+		120
+	],
+	"theme": "Nexus.sublime-theme",
+	"use_simple_full_screen": false,
+	"vintage_start_in_command_mode": true
 }
