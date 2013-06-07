@@ -140,9 +140,10 @@ set background=dark
 colorscheme solarized
 
 " NERDTree
-" let NERDTreeQuitOnOpen = 1
+let NERDTreeQuitOnOpen = 1
 let NERDTreeChDirMode=2
 nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 
 " TagList
 map <F3> :TlistToggle<CR>
