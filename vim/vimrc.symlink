@@ -195,5 +195,3 @@ nmap <Tab> <Leader>be
 
 " highlight trailing whitespace
 highlight ShowTrailingWhitespace ctermbg=DarkRed guibg=DarkRed
-
-:se nohidden
