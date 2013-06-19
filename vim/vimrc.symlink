@@ -190,8 +190,10 @@ set nofoldenable " folds disabled by default
 " syntax highliting
 syntax on
 
-" open bufexplorer with <Tab>
+" buffer-explorer settings
 nmap <Tab> <Leader>be
+nmap <S-Tab> <Leader>bs
+let g:bufExplorerShowRelativePath=1
 
 " highlight trailing whitespace
 highlight ShowTrailingWhitespace ctermbg=DarkRed guibg=DarkRed
