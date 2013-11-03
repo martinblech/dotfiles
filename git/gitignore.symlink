@@ -38,7 +38,7 @@ Thumbs.db
 
 # Temporary VIM files #
 #######################
-*.s[a-w][a-z]
+[._]*.s[a-w][a-p]
 *.un~
 Session.vim
 .netrwhist
