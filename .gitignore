@@ -3,6 +3,5 @@ sublime2/User/Package Control.last-run
 sublime2/User/SublimeREPLHistory/
 git/gitconfig.symlink
 .DS_Store
-vim/vim.symlink/.netrwhist
-vim/vim.symlink/vim.symlink
+vim/vim.symlink/bundle/
 *.py[oc]

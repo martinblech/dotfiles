@@ -1,8 +1,40 @@
-" enable pathogen
-execute pathogen#infect()
-
 " disable vi compatibility
 set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" ----------------------------------------
+" Bundles here:
+"
+" github repos:
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/syntastic'
+" (snipMate)
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+" (end snipMate)
+Bundle 'othree/html5.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'scrooloose/nerdtree'
+Bundle 'mileszs/ack.vim'
+" vim-scripts:
+Bundle 'ShowTrailingWhitespace'
+Bundle 'bufexplorer.zip'
+Bundle 'gitignore.vim'
+" Bundle 'Command-T' native extension segfaults
+" ----------------------------------------
+
+filetype plugin indent on
 
 set encoding=utf-8
 
@@ -200,3 +232,6 @@ let g:bufExplorerShowRelativePath=1
 
 " highlight trailing whitespace
 highlight ShowTrailingWhitespace ctermbg=DarkRed guibg=DarkRed
+
+" syntastic
+let g:syntastic_auto_loc_list=1
