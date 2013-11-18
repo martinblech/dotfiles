@@ -27,6 +27,8 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 " vim-scripts:
 Bundle 'ShowTrailingWhitespace'
 Bundle 'bufexplorer.zip'
@@ -235,3 +237,6 @@ highlight ShowTrailingWhitespace ctermbg=DarkRed guibg=DarkRed
 
 " syntastic
 let g:syntastic_auto_loc_list=2
+
+" Dash integration
+:nmap <silent> <leader>d <Plug>DashSearch
