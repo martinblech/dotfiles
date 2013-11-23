@@ -29,6 +29,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'mileszs/ack.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'kchmck/vim-coffee-script'
 " vim-scripts:
 Bundle 'ShowTrailingWhitespace'
 Bundle 'bufexplorer.zip'
