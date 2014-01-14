@@ -30,6 +30,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'groenewege/vim-less'
 " vim-scripts:
 Bundle 'ShowTrailingWhitespace'
 Bundle 'bufexplorer.zip'
